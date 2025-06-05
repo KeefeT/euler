@@ -26,7 +26,6 @@ def main():
         start += 1
 
     print("max value: " + str(max))
-    # solution 23514624000
 
 if __name__ == "__main__":
     main()
