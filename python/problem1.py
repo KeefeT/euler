@@ -17,9 +17,7 @@ def main():
                 break
 
     print("sum: " + str(sum))
-    if sum 
     # solution 233168
-
 
 if __name__ == "__main__":
     main()
