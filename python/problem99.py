@@ -90,4 +90,4 @@ def compute_by_log():
     print(i_max)
 
 if __name__ == "__main__":
-    compute_by_log()
+    main()
