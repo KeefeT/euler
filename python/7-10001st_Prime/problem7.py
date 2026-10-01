@@ -9,6 +9,8 @@
 
 import math
 
+from libeuler.primes import sieve
+
 # sieve moment?
 def main():
 
@@ -17,33 +19,13 @@ def main():
     upper_bound = int(n * (math.log(n) + math.log(math.log(n))))
     print(upper_bound)
 
-    l = list(range(3, upper_bound, 2)) # quick trick to cut number of
-                               # elements in half to start out with
-
-    sieve(l)
-    l.insert(0, 2)
+    l = sieve(upper_bound)
 
     print(l)
     print('\n')
     print(l[10000])
 
 
-def sieve(l :list) -> list:
-
-    count = 0
-
-    while count < len(l):
-        x = l[count]
-        y = l[count]
-
-        while y+x <= l[-1]:
-            y = y+x
-            try:
-                l.remove(y)
-            except Exception as e:
-                continue
-
-        count += 1
 
 if __name__ == "__main__":
     main()

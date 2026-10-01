@@ -1,27 +1,9 @@
 #!/usr/bin/env python3
 
+from libeuler.primes import sieve
+
 PRIMES = {2, 3, 5, 7}
 
-def sieve(limit: int) -> list[int]:
-    if limit < 2:
-        return []
-
-    # 1. Create a boolean array initialized to True
-    is_prime = [True] * (limit + 1)
-    is_prime[0] = is_prime[1] = False  # 0 and 1 are not prime
-
-    # 2. Only loop up to the square root of the limit
-    for p in range(2, int(limit**0.5) + 1):
-        if is_prime[p]:
-            # 3. Directly jump to multiples of p and mark them False
-            # Start at p*p because smaller multiples are already marked
-            for multiple in range(p * p, limit + 1, p):
-                is_prime[multiple] = False
-
-    # 4. Extract the indices that are still True
-    primes = [i for i, prime in enumerate(is_prime) if prime]
-    print(primes)
-    return primes
 
 def truncate(l: list, pop_idx: int):
 
