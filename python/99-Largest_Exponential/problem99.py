@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import math
 
 
@@ -7,7 +9,7 @@ def main():
     largest_base = -1
     largest_exp = -1
     line_num = 1
-    with open("./resources/0099_base_exp.txt") as file:
+    with open(Path(__file__).with_name("0099_base_exp.txt")) as file:
         for line in file:
             print(f'Line num {line_num}')
             arr = line.split(',')
@@ -69,7 +71,7 @@ def compute_by_log():
     # very cool 
  
     base_exponent_pairs = []
-    with open("./resources/0099_base_exp.txt") as file:
+    with open(Path(__file__).with_name("0099_base_exp.txt")) as file:
         for line in file:
             arr = line.split(',')
             base = int(arr[0])

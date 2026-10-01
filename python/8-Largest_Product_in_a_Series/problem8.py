@@ -1,10 +1,12 @@
+from pathlib import Path
+
 def main():
     print("start")
     arr = []
     max = -1
 
     # fill number into array
-    with open("resources/problem8-number.txt") as file:
+    with open(Path(__file__).with_name("problem8-number.txt")) as file:
         for line in file:
             for num in line:
                 if num != '\n':
