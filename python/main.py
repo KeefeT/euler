@@ -6,12 +6,13 @@ import sys
 
 
 def main():
-    root = Path(__file__).resolve().parent
+    root = Path(__file__).resolve().parent / "problems"
     problems = {}
     for folder in root.iterdir():
-        number, separator, title = folder.name.partition("-")
-        if folder.is_dir() and separator and number.isdigit():
-            scripts = sorted(folder.glob(f"problem{int(number)}*.py"))
+        prefix, separator, title = folder.name.partition("_")
+        number = prefix.removeprefix("p")
+        if folder.is_dir() and separator and prefix.startswith("p") and number.isdigit():
+            scripts = sorted(folder.glob("solution*.py"))
             if scripts:
                 problems[int(number)] = (title.replace("_", " "), scripts)
 

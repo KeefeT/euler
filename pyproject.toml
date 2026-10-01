@@ -10,4 +10,10 @@ requires-python = ">=3.10"
 
 [tool.setuptools]
 package-dir = {"" = "python"}
-packages = ["libeuler"]
+
+[tool.setuptools.packages.find]
+where = ["python"]
+include = ["libeuler*", "problems*"]
+
+[tool.setuptools.package-data]
+"problems.*" = ["*.txt"]

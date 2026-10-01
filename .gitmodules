@@ -1,0 +1,3 @@
+[submodule "libkeefe"]
+	path = libkeefe
+	url = git@github.com:KeefeT/libkeefe.git
